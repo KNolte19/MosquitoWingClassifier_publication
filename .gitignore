@@ -1,0 +1,9 @@
+
+.DS_Store
+/__pycache__
+/archive
+/data
+/writing
+figures/wing_poster.png
+figures/wing_damage.png
+*.pptx
