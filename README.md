@@ -1,4 +1,4 @@
-# MosquitoWingClassifier_publiction
+# MosquitoWingClassifier_publication
  
 This repository contains the code and data associated with the publication **"Potentials and limitations in the application of Convolutional Neural Networks for mosquito species identification using wing images"**. 
 
