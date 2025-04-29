@@ -10,6 +10,7 @@ This repository contains the code and data associated with the publication:
 - `/figures`: All figures created for the publication (Figures 1–7).
 - `/robustness_experiment`: Scripts and data for the robustness experiments (Section 3.5).
 - `/utils`: Utility functions for data generation and metadata, including reference dataframes and dataset splits.
+- `requirements.txt`: Contains all dependencies to run the scripts. 
 
 ## Workflow Overview
 
