@@ -1,45 +1,69 @@
 # MosquitoWingClassifier Publication
 
-This repository contains the code and data associated with the publication **"Potentials and limitations in the application of Convolutional Neural Networks for mosquito species identification using wing images"**.
-
-## General Workflow of Model Training and Evaluation
-
-1. **Dataset Creation**:
-    - The datasets were created using the notebooks `dataset_splitter.ipynb` and `dataset_splitter_device.ipynb`.
-    - The publicly available dataset of mosquito wing images previously published by us was used as the basis. You can find the dataset [here](https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1478).
-
-2. **Model Training**:
-    - The CNN models were trained using the `trainer_classifier.ipynb` script, which can be found in the `/models` folder.
-    - For the final models, we trained five models, each using a different fold as the testing set. The number after the model name indexes the fold used for testing.
-    - The same process was repeated for all device experiments as described in the publication using the `trainer_classifier.ipynb` script.
-
-3. **Analysis**:
-    - Different aspects of the analysis were conducted using the following scripts:
-      - `test_models.ipynb`: Generates the testing data of the models on the respective testing set.
-      - `analyse_dataset.ipynb`: Generates figures to illustrate the dataset composition.
-      - `analyse_feasibility.ipynb`: Generates model predictions on the feasibility images and returns statistics on performance.
-      - `analyse_GradCam.ipynb`: Generates averaged GradCam images and creates figures.
-      - `analyse_results_deviceexp.ipynb`: Calculates metrics for the performance of the models in the device experiment.
-      - `analyse_results.ipynb`: Calculates metrics for the performance of the final models used in the application.
-      - `analyse_UMAP.ipynb`: Generates feature maps and calculates UMAP visualizations of them.
-
-4. **Utility Functions**:
-    - In the `BALROG_pipeline.py` script, we collected useful functions utilized to generate the data.
+This repository contains the code and data associated with the publication:  
+**"Potentials and limitations in the application of Convolutional Neural Networks for mosquito species identification using wing images"**
 
 ## Repository Structure
 
-- `/models`: Contains the trained models and the `trainer_classifier.ipynb` script.
-- `/notebooks`: Contains the Jupyter notebooks used for dataset creation and analysis.
-- `BALROG_pipeline.py`: Contains utility functions for data generation.
+- `/classifier`: Scripts for dataset creation, model training, and analysis of the main model trained on 21 mosquito species (Sections 3.1–3.3 & 3.5).
+- `/feasibility_experiment`: Scripts and data for the feasibility study (Section 3.6).
+- `/figures`: All figures created for the publication (Figures 1–7).
+- `/robustness_experiment`: Scripts and data for the robustness experiments (Section 3.5).
+- `/utils`: Utility functions for data generation and metadata, including reference dataframes and dataset splits.
+
+## Workflow Overview
+
+### 1. Dataset Creation
+
+- Datasets were generated using the notebooks:
+  - `classifier/dataset-splitter_classifier.ipynb`
+  - `robustness_experiment/dataset-splitter_device.ipynb`
+- The datasets are based on our publicly available mosquito wing image dataset:  
+  [EBI BioImages - S-BIAD1478](https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1478)
+- Final processed `.npy` files for training are available for download:  
+  [Google Drive – Dataset Files](https://drive.google.com/drive/folders/1KVqjOPV90UKcxodv_agUO3Tx2GYhggVd?usp=share_link)
+
+### 2. Model Training
+
+- Models for the main classifier were trained using:  
+  `classifier/trainer_classifier.ipynb`
+- Models for the robustness experiment were trained using:  
+  `robustness_experiment/trainer_robustness.ipynb`
+- Note: These scripts are optimized for Google Colab.
+- Five models were trained in total, each with a different fold as the test set. Model names indicate the fold used.
+- Trained models for the main classifier are located in:  
+  `classifier/models/`
+
+### 3. Evaluation and Analysis
+
+#### Main Classifier Analysis
+
+- `classifier/test_classifier.ipynb`: Evaluates models on the respective test sets.
+- `classifier/analyse_dataset.ipynb`: Analyzes dataset composition and generates related figures.
+- `classifier/analyse_GradCam.ipynb`: Computes and visualizes Grad-CAM heatmaps.
+- `classifier/analyse_classifier.ipynb`: Computes performance metrics for the trained models.
+- `classifier/analyse_UMAP.ipynb`: Generates UMAP visualizations from feature embeddings.
+
+#### Feasibility Study
+
+- `feasibility_experiment/analyse_feasibility.ipynb`: Evaluates model predictions on out-of-distribution (OOD) images.
+- `feasibility_experiment/analyse_feasibility_zeiss-device.ipynb`: Evaluates model performance on images captured with a novel device.
+
+#### Robustness Experiment
+
+- `robustness_experiment/analyse_results_deviceexp.ipynb`: Computes performance metrics for models in the robustness experiment.
+
+### 4. Utility Functions
+
+- `utils/BALROG_pipeline.py`: Contains helper functions for data preprocessing and generation.
 
 ## Citation
 
-If you use this code or data, please cite our publication:
-
-**"Potentials and limitations in the application of Convolutional Neural Networks for mosquito species identification using wing images"**
-[here](https://www.biorxiv.org/content/10.1101/2025.01.29.635420v1.article-info)
-
+If you use this repository, please cite our publication:  
+**"Potentials and limitations in the application of Convolutional Neural Networks for mosquito species identification using wing images"**  
+[View on bioRxiv](https://www.biorxiv.org/content/10.1101/2025.01.29.635420v1.article-info)
 
 ## Contact
 
-For any questions or issues, please contact [Kristopher Nolte](mailto:kristophernolte@bnitm.de).
+For questions or feedback, feel free to contact:  
+[Kristopher Nolte](mailto:kristophernolte@bnitm.de)
