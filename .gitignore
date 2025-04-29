@@ -8,3 +8,6 @@ figures/wing_poster.png
 figures/wing_damage.png
 *.pptx
 figures/misclass_wings.png
+/classifier/data
+/feasibility_experiment/data/participants
+/robustness_experiment/data
