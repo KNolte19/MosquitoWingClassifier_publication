@@ -19,10 +19,8 @@ This repository contains the code and data associated with the publication:
 - Datasets were generated using the notebooks:
   - `classifier/dataset-splitter_classifier.ipynb`
   - `robustness_experiment/dataset-splitter_device.ipynb`
-- The datasets are based on our publicly available mosquito wing image dataset:  
-  [EBI BioImages - S-BIAD1478](https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1478)
-- Final processed `.npy` files for training are available for download:  
-  [Google Drive – Dataset Files](https://drive.google.com/drive/folders/1KVqjOPV90UKcxodv_agUO3Tx2GYhggVd?usp=share_link)
+- The datasets are based on our publicly available mosquito wing image dataset: [EBI BioImages - S-BIAD1478](https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1478)
+- Final processed `.npy` files for training are available for download: [Google Drive – Dataset Files](https://drive.google.com/drive/folders/1KVqjOPV90UKcxodv_agUO3Tx2GYhggVd?usp=share_link)
 
 ### 2. Model Training
 
@@ -57,6 +55,7 @@ This repository contains the code and data associated with the publication:
 ### 4. Utility Functions
 
 - `utils/BALROG_pipeline.py`: Contains helper functions for data preprocessing and generation.
+- `references`: Dataframes describing the dataset. Refer to `utils/references/database_reference_MLREADY.xlsx` for full overview of the dataset composition.
 
 ## Citation
 
