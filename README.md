@@ -5,14 +5,14 @@ This repository contains the code and data associated with the publication:
 
 ## Repository Structure
 
-- `/classifier`: Scripts for dataset creation, model training, and analysis of the main model trained on 21 mosquito species (Sections 3.1–3.3 & 3.5).
+- `/classifier`: Scripts for dataset creation, model training, and analysis of the main models trained for 21 mosquito species (see Sections 3.1–3.3 & 3.5 in the manuscript).
 - `/feasibility_experiment`: Scripts and data for the feasibility study (Section 3.6).
 - `/figures`: All figures created for the publication (Figures 1–7).
 - `/robustness_experiment`: Scripts and data for the robustness experiments (Section 3.5).
 - `/utils`: Utility functions for data generation and metadata, including reference dataframes and dataset splits.
 - `requirements.txt`: Contains all dependencies to run the scripts. 
 
-## Workflow Overview
+## Workflow
 
 ### 1. Dataset Creation
 
