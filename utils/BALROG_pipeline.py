@@ -1,15 +1,19 @@
 import os
-import numpy as np
-import skimage as ski
 import cv2
 import torch
 import torchvision
-from rembg import remove, new_session
-from pytorch_grad_cam import GradCAM, HiResCAM, ScoreCAM, GradCAMPlusPlus, AblationCAM, XGradCAM, EigenCAM, FullGrad
+
+import numpy as np
+import skimage as ski
+
+from rembg import remove
+from pytorch_grad_cam import GradCAMPlusPlus
 from pytorch_grad_cam.utils.model_targets import ClassifierOutputTarget
 from pytorch_grad_cam import GuidedBackpropReLUModel
-from pytorch_grad_cam.utils.image import show_cam_on_image, deprocess_image
+from pytorch_grad_cam.utils.image import deprocess_image
 
+
+ROOTPATH = "/home/jens/MosquitoWingClassifier_publication/"
 
 species_array = ['aegypti', 'albopictus', 'annulipes-group', 'caspius',
        'cataphylla', 'cinereus-geminus-pair', 'claviger-petragnani-pair',
