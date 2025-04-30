@@ -14,13 +14,21 @@ This repository contains the code and data associated with the publication:
 
 ## Workflow
 
+### 0. Set absolute path to repository
+- Open the file `utils/BALROG_pipeline.py`
+- Set the absolute path to the repository (line 16) 
+  - e.g. `ROOTPATH = "/home/username/MosquitoWingClassifier_publication/"`
+
 ### 1. Dataset Creation
 
 - Datasets were generated using the notebooks:
   - `classifier/dataset-splitter_classifier.ipynb`
   - `robustness_experiment/dataset-splitter_device.ipynb`
 - The datasets are based on our publicly available mosquito wing image dataset: [EBI BioImages - S-BIAD1478](https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1478)
+  - TODO: how to download this and where exactly does it need to be stored to run the classifier
+  - Data needs to be saved in the root directory in a folder called `MosquitoWingDataset`
 - Final processed `.npy` files for training are available for download: [Google Drive – Dataset Files](https://drive.google.com/drive/folders/1KVqjOPV90UKcxodv_agUO3Tx2GYhggVd?usp=share_link)
+  - Everything in the drive (4 *.npy and 1 folder) should be downloaded and put into `classifier/data/`
 
 ### 2. Model Training
 
