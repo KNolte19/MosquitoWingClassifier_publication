@@ -9,7 +9,7 @@ albumentations == 1.4.21
 scikit-image == 0.22.0
 torchvision == 0.20.0
 umap-learn == 0.5.6
-rembg == 2.0.53
+rembg == 2.0.53 # I cannot find this version using pip inside a conda environment, installed 2.0.55 instead
 tqdm == 4.66.1
 opencv-python
 grad-cam
