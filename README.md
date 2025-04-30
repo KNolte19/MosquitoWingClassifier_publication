@@ -62,7 +62,6 @@ If you use this repository, please cite our publication:
 **"Potentials and limitations in the application of Convolutional Neural Networks for mosquito species identification using wing images"**  
 [View on bioRxiv](https://www.biorxiv.org/content/10.1101/2025.01.29.635420v1.article-info)
 
-=======
 
 ## License
 This code and all data in this repository are licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license.  
