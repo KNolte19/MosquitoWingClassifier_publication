@@ -14,3 +14,4 @@ tqdm == 4.66.1
 opencv-python
 grad-cam
 ipykernel
+wandb
