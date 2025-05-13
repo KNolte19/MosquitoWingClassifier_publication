@@ -14,13 +14,22 @@ This repository contains the code and data associated with the publication:
 
 ## Workflow
 
+### 0. Set absolute path to repository
+
+- Open the file `utils/config.py`
+- Set the absolute path to the repository (line 1) 
+  - e.g. `ROOT = "/home/username/MosquitoWingClassifier_publication/"`
+
 ### 1. Dataset Creation
 
-- Datasets were generated using the notebooks:
+- Datasets for the two experiments (classifer and robustness experiment) were generated using the notebooks:
   - `classifier/dataset-splitter_classifier.ipynb`
   - `robustness_experiment/dataset-splitter_device.ipynb`
-- The datasets are based on our publicly available mosquito wing image dataset: [EBI BioImages - S-BIAD1478](https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1478)
-- Final processed `.npy` files for training are available for download: [Google Drive – Dataset Files](https://drive.google.com/drive/folders/1KVqjOPV90UKcxodv_agUO3Tx2GYhggVd?usp=share_link)
+
+ As training was done via GoogleColab all image files were preprocessed and saved as `.npy` file.
+ We provide the preprocessed images as `.npy` file via [Google Drive – Data](https://drive.google.com/drive/folders/1KVqjOPV90UKcxodv_agUO3Tx2GYhggVd?usp=share_link). If you want to follow these instructions and replicate the experiments download the files and move the `.npy` files to the `/data` folder of the respective experiments.
+
+ The original images can accessed and downloaded here: [EBI BioImages - S-BIAD1478](https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1478). They were all preprocessed using `utils/BALROG_pipeline.py`.
 
 ### 2. Model Training
 
@@ -28,10 +37,8 @@ This repository contains the code and data associated with the publication:
   `classifier/trainer_classifier.ipynb`
 - Models for the robustness experiment were trained using:  
   `robustness_experiment/trainer_robustness.ipynb`
-- Note: These scripts are optimized for Google Colab.
-- Five models were trained in total, each with a different fold as the test set. Model names indicate the fold used.
-- Trained models for the main classifier are located in:  
-  `classifier/models/`
+
+Note: These scripts were optimized for Google Colab. We adapted them to be used in this repository. If you want to use original setup copy this folder to your drive and run the scripts using Google Colab. [Google Drive](https://drive.google.com/drive/folders/1PoQCBq7t0R7cGMgllmFHxpwLHtMMs_Ds?usp=share_link).
 
 ### 3. Evaluation and Analysis
 
@@ -50,25 +57,26 @@ This repository contains the code and data associated with the publication:
 
 #### Robustness Experiment
 
-- `robustness_experiment/analyse_results_deviceexp.ipynb`: Computes performance metrics for models in the robustness experiment.
+- `robustness_experiment/analyse_results_robustness.ipynb`: Computes performance metrics for models in the robustness experiment.
+- `robustness_experiment/analyse_dataset_robustness.ipynb`:  Analyzes dataset composition as seen Supplementary Material 4.
 
 ### 4. Utility Functions
 
+- `utils/config.py`: Contains variable to set ROOT path.
 - `utils/BALROG_pipeline.py`: Contains helper functions for data preprocessing and generation.
 - `references`: Dataframes describing the dataset. Refer to `utils/references/database_reference_MLREADY.xlsx` for full overview of the dataset composition.
 
 ## Citation
+
 If you use this repository, please cite our publication:  
 **"Potentials and limitations in the application of Convolutional Neural Networks for mosquito species identification using wing images"**  
 [View on bioRxiv](https://www.biorxiv.org/content/10.1101/2025.01.29.635420v1.article-info)
 
-
 ## License
+
 This code and all data in this repository are licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license.  
 You are free to share and adapt the code as long as you provide appropriate credit.  
 
-
 ## Contact
 
-For questions or feedback, feel free to contact:  
-[Kristopher Nolte](mailto:kristophernolte@bnitm.de)
+For questions or feedback, feel free to contact: [Kristopher Nolte](mailto:kristophernolte@bnitm.de)
