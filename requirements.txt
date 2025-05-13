@@ -11,6 +11,7 @@ torchvision == 0.20.0
 umap-learn == 0.5.6
 rembg == 2.0.53
 tqdm == 4.66.1
+statsmodels == 0.14.0 
 opencv-python
 grad-cam
 ipykernel

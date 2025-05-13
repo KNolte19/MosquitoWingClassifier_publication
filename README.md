@@ -26,11 +26,10 @@ This repository contains the code and data associated with the publication:
   - `classifier/dataset-splitter_classifier.ipynb`
   - `robustness_experiment/dataset-splitter_device.ipynb`
 
-- As training is done via GoogleColab all image file were preprocessed and saved as `.npy` file.
- We provide the preprocessed images as `.npy` file via [Google Drive – Data](https://drive.google.com/drive/folders/1KVqjOPV90UKcxodv_agUO3Tx2GYhggVd?usp=share_link). If you want to replicate the experiments download the files and move the .npy files to
- the `/data` folder of the respective experiments.
+ As training was done via GoogleColab all image files were preprocessed and saved as `.npy` file.
+ We provide the preprocessed images as `.npy` file via [Google Drive – Data](https://drive.google.com/drive/folders/1KVqjOPV90UKcxodv_agUO3Tx2GYhggVd?usp=share_link). If you want to follow these instructions and replicate the experiments download the files and move the `.npy` files to the `/data` folder of the respective experiments.
 
- The original images can accessed and downloaded here: [EBI BioImages - S-BIAD1478](https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1478)
+ The original images can accessed and downloaded here: [EBI BioImages - S-BIAD1478](https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1478). They were all preprocessed using `utils/BALROG_pipeline.py`.
 
 ### 2. Model Training
 
@@ -38,7 +37,8 @@ This repository contains the code and data associated with the publication:
   `classifier/trainer_classifier.ipynb`
 - Models for the robustness experiment were trained using:  
   `robustness_experiment/trainer_robustness.ipynb`
-- Note: These scripts were optimized for Google Colab. We adapted them to be used in this repository. If you want to use original setup copy this folder to your drive and run the scripts using Google Colab. [Google Drive](https://drive.google.com/drive/folders/1PoQCBq7t0R7cGMgllmFHxpwLHtMMs_Ds?usp=share_link)
+
+Note: These scripts were optimized for Google Colab. We adapted them to be used in this repository. If you want to use original setup copy this folder to your drive and run the scripts using Google Colab. [Google Drive](https://drive.google.com/drive/folders/1PoQCBq7t0R7cGMgllmFHxpwLHtMMs_Ds?usp=share_link).
 
 ### 3. Evaluation and Analysis
 
@@ -57,7 +57,8 @@ This repository contains the code and data associated with the publication:
 
 #### Robustness Experiment
 
-- `robustness_experiment/analyse_results_deviceexp.ipynb`: Computes performance metrics for models in the robustness experiment.
+- `robustness_experiment/analyse_results_robustness.ipynb`: Computes performance metrics for models in the robustness experiment.
+- `robustness_experiment/analyse_dataset_robustness.ipynb`:  Analyzes dataset composition as seen Supplementary Material 4.
 
 ### 4. Utility Functions
 
@@ -78,5 +79,4 @@ You are free to share and adapt the code as long as you provide appropriate cred
 
 ## Contact
 
-For questions or feedback, feel free to contact:  
-[Kristopher Nolte](mailto:kristophernolte@bnitm.de)
+For questions or feedback, feel free to contact: [Kristopher Nolte](mailto:kristophernolte@bnitm.de)

@@ -8,6 +8,9 @@ figures/wing_poster.png
 figures/wing_damage.png
 *.pptx
 figures/misclass_wings.png
-/classifier/data
+/classifier/data/*.npy
+/classifier/data/mos_dataset_processed
 /feasibility_experiment/data/participants
-/robustness_experiment/data
+
+/robustness_experiment/data/vanilla_images
+/robustness_experiment/data/*.npy
