@@ -12,6 +12,25 @@ This repository contains the code and data associated with the publication:
 - `/utils`: Utility functions for data generation and metadata, including reference dataframes and dataset splits.
 - `requirements.txt`: Contains all dependencies to run the scripts. 
 
+## Dependencies
+
+We used Python 3.10.12 and the requirements that need to be installed are given in requirements.txt.
+Based on these you can for example create a conda environment using the following command:
+
+```
+conda create -n mosquito --file requirements.txt
+```
+
+Some users received the following error installing directly from the requirements.txt file:
+```
+PackagesNotFoundError: The following packages are not available from current channels
+```
+In this case you can create a conda environment containing only python and then install all dependencies by hand using pip.
+```
+conda create -n mosquito python==3.10.12
+pip install [package]==[version]
+```
+
 ## Workflow
 
 ### 0. Set absolute path to repository
