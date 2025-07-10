@@ -83,8 +83,8 @@ def pad_and_resize(image):
     image_padded = torch.nn.functional.pad(image, (pad_width, pad_width, pad_height, pad_height), mode='constant', value=0)
 
     # Resize the image to 512x512, then crop to the desired region
-    image_resized = torchvision.transforms.functional.resize(image_padded.unsqueeze(0), (512, 512)).numpy()[0]
-    return image_resized[128:384, :]
+    image_resized = torchvision.transforms.functional.resize(image_padded.unsqueeze(0), (384, 384)).numpy()[0]
+    return image_resized[96:288, :]
 
 
 def image_preprocessing_pipeline(file_path, bg_session):

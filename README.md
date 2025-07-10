@@ -3,16 +3,21 @@
 This repository contains the code and data associated with the publication:  
 **"Potentials and limitations in the application of Convolutional Neural Networks for mosquito species identification using wing images"**
 
+It will allow you to reproduce the process of creating and evaluating the models. 
+If you want to test the application on your machine, we refer you to our [second repository](https://github.com/KNolte19/MosquitoWingClassifier).
+To get an demo of the application you can use our web-hosted application [BALROG](https://balrog.bnitm.de). Currently this is password protected, please reach out to me to receive login credentials.
+
 ## Repository Structure
 
 - `/classifier`: Scripts for dataset creation, model training, and analysis of the main models trained for 21 mosquito species (see Sections 3.1–3.3 & 3.5 in the manuscript).
 - `/feasibility_experiment`: Scripts and data for the feasibility study (Section 3.6).
 - `/figures`: All figures created for the publication (Figures 1–7).
 - `/robustness_experiment`: Scripts and data for the robustness experiments (Section 3.5).
-- `/utils`: Utility functions for data generation and metadata, including reference dataframes and dataset splits.
+- `/utils`: Utility functions for data generation, testing the models and metadata, including reference dataframes and dataset splits.
 - `requirements.txt`: Contains all dependencies to run the scripts. 
 
 ## Workflow
+If you want to reproduce the model training and analysis, please follow the steps below.
 
 ### 0. Set absolute path to repository
 
@@ -29,7 +34,7 @@ This repository contains the code and data associated with the publication:
  As training was done via GoogleColab all image files were preprocessed and saved as `.npy` file.
  We provide the preprocessed images as `.npy` file via [Google Drive – Data](https://drive.google.com/drive/folders/1KVqjOPV90UKcxodv_agUO3Tx2GYhggVd?usp=share_link). If you want to follow these instructions and replicate the experiments download the files and move the `.npy` files to the `/data` folder of the respective experiments.
 
- The original images can accessed and downloaded here: [EBI BioImages - S-BIAD1478](https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1478). They were all preprocessed using `utils/BALROG_pipeline.py`.
+ The original images can accessed and downloaded here: [EBI BioImages - S-BIAD1478](https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1478). They were all preprocessed using `utils/BALROG_pipeline.py` using the function image_preprocessing_pipeline().
 
 ### 2. Model Training
 
@@ -44,7 +49,7 @@ Note: These scripts were optimized for Google Colab. We adapted them to be used 
 
 #### Main Classifier Analysis
 
-- `classifier/test_classifier.ipynb`: Evaluates models on the respective test sets.
+- `classifier/test_classifier.ipynb`: Evaluates models on the respective test sets based on pickle files in `classifier/results`.
 - `classifier/analyse_dataset.ipynb`: Analyzes dataset composition and generates related figures.
 - `classifier/analyse_GradCam.ipynb`: Computes and visualizes Grad-CAM heatmaps.
 - `classifier/analyse_classifier.ipynb`: Computes performance metrics for the trained models.
@@ -63,7 +68,8 @@ Note: These scripts were optimized for Google Colab. We adapted them to be used 
 ### 4. Utility Functions
 
 - `utils/config.py`: Contains variable to set ROOT path.
-- `utils/BALROG_pipeline.py`: Contains helper functions for data preprocessing and generation.
+- `utils/BALROG_pipeline.py`: Contains pipeline functions for data preprocessing and generation.
+- `utils/run_classifier_DEMO.ipynb`: A notebook which gives you a small demonstration to test the models on images.
 - `references`: Dataframes describing the dataset. Refer to `utils/references/database_reference_MLREADY.xlsx` for full overview of the dataset composition.
 
 ## Citation
