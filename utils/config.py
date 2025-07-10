@@ -1,1 +1,1 @@
-ROOT = "/Users/kristophernolte/Documents/phd_application_v3/"
+ROOT = "/home/jens/MosquitoWingClassifier_publication/"

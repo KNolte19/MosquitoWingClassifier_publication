@@ -16,6 +16,25 @@ To get an demo of the application you can use our web-hosted application [BALROG
 - `/utils`: Utility functions for data generation, testing the models and metadata, including reference dataframes and dataset splits.
 - `requirements.txt`: Contains all dependencies to run the scripts. 
 
+## Dependencies
+
+We used Python 3.10.12 and the requirements that need to be installed are given in requirements.txt.
+Based on these you can for example create a conda environment using the following command:
+
+```
+conda create -n mosquito --file requirements.txt
+```
+
+Some users received the following error installing directly from the requirements.txt file:
+```
+PackagesNotFoundError: The following packages are not available from current channels
+```
+In this case you can create a conda environment containing only python and then install all dependencies by hand using pip.
+```
+conda create -n mosquito python==3.10.12
+pip install [package]==[version]
+```
+
 ## Workflow
 If you want to reproduce the model training and analysis, please follow the steps below.
 
@@ -75,12 +94,11 @@ Note: These scripts were optimized for Google Colab. We adapted them to be used 
 ## Citation
 
 If you use this repository, please cite our publication:  
-**"Potentials and limitations in the application of Convolutional Neural Networks for mosquito species identification using wing images"**  
-[View on bioRxiv](https://www.biorxiv.org/content/10.1101/2025.01.29.635420v1.article-info)
+"Potentials and limitations in the application of Convolutional Neural Networks for mosquito species identification using wing images" [View on bioRxiv](https://www.biorxiv.org/content/10.1101/2025.01.29.635420v1.article-info)
 
 ## License
 
-This code and all data in this repository are licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license.  
+This code and all data in this repository are licensed under the [(CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license.  
 You are free to share and adapt the code as long as you provide appropriate credit.  
 
 ## Contact
